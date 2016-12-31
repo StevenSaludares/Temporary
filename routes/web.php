@@ -22,10 +22,15 @@ Route::post('/signin',[
      'uses' => 'UserController@postSignIn',
 	 'as' => 'signin'
 ]);
+Route::post('/createpost',[
+     'uses' => 'PostController@postCreatePost',
+	 'as' => 'post.create'
+]);
 Route::group(['middleware' => ['auth']], function(){
 Route::get('/dashboard', [
      'uses' => 'UserController@getDashboard',
 	 'as' => 'dashboard',
 ]);
 });
+
 
