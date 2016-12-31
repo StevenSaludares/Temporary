@@ -26,16 +26,19 @@ Route::post('/createpost',[
      'uses' => 'PostController@postCreatePost',
 	 'as' => 'post.create'
 ]);
+Route::get('/logout', [
+     'uses' => 'UserController@getLogout',
+	 'as' => 'logout'
+]);
+Route::group(['middleware' => 'auth'], function () {
 Route::get('/dashboard', [
      'uses' => 'PostController@getDashboard',
-	 'as' => 'dashboard',
-	 'middleware' => 'auth'
+	 'as' => 'dashboard'
 ]);
 Route::get('/delete-post/{post_id}', [
      'uses' => 'PostController@getDeletePost',
-	 'as' => 'post.delete',
-	 'middleware' => 'auth'
+	 'as' => 'post.delete'
 ]);
-
+});
 
 
