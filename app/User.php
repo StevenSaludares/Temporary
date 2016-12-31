@@ -2,12 +2,10 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Contracts\Auth\Authenticable
+use Illuminate\Contracts\Auth\Authenticatable;
 
 
-class User extends Model implements Authenticable{
-	use \Illuminate\Auth\Authenticable;
+class User extends Model implements Authenticatable{
+	use \Illuminate\Auth\Authenticatable;
 }
