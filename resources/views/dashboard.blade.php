@@ -17,11 +17,11 @@
 	<section class = "row posts">
 	    <div class = "col-md-6 col-md-offset-3">
 		<header><h3>What other people say...</h3></header>
-		<article class = "post">
-		    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, eligendi repella
-			minus obcaecati quia quisquam sit. </p>
+		@foreach($posts as $post)
+		     <article class = "post">
+		    <p>{{ $post->body }}</p>
 			<div class = "info">
-			  Posted by Max on Feb 12 2016
+			  Posted by {{ $post->user->first_name}} on {{ $post->created_at }}
 			</div>
 			<div class = "interaction">
 			   <a href = "#">Like</a> |
@@ -30,19 +30,7 @@
 			   <a href = "#">Delete</a>
 			</div>
 		</article>
-		<article class = "post">
-		    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, eligendi repella
-			minus obcaecati quia quisquam sit. </p>
-			<div class = "info">
-			  Posted by Max on Feb 12 2016
-			</div>
-			<div class = "interaction">
-			   <a href = "#">Like</a> |
-			   <a href = "#">Dislike</a> |
-			   <a href = "#">Edit</a> |
-			   <a href = "#">Delete</a>
-			</div>
-		</article>
+		    @endforeach
 		</div>
 	</section>
 @endsection
