@@ -10,6 +10,11 @@ class UserController extends Controller{
 		return view ('dashboard');
 	}
 	public function postSignUp(Request $request){
+		$this->validate($request,[
+		   'email' => 'required|email|unique:users',
+		   'first_name' => 'required|max:120',
+		   'password' => 'required|min:4'
+		]);
 		$email = $request['email'];
 		$first_name = $request['first_name'];
 		$password = bcrypt($request['password']);
