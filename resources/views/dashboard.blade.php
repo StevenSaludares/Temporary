@@ -6,7 +6,7 @@
 		    <header><h3>What do you have to say?</h3></header>
 			<form action = "">
 			    <div class = "form-group">
-				    <textarea name = "form-control" id = "new-post" rows = "5" placeholder = "Your Post"></textarea>
+				    <textarea name = "form-control" id = "body" rows = "5" placeholder = "Your Post"></textarea>
 				</div>
 				<button type = "submit" class = "btn btn-primary">Create Post</button>
 			</form>
