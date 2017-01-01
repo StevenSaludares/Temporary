@@ -46,6 +46,10 @@ Route::get('/userimage/{filename}', [
     'uses' => 'UserController@getUserImage',
     'as' => 'account.image'
 ]);
+Route::post('/like', [
+    'uses' => 'PostController@postLikePost',
+    'as' => 'like'
+]);
 Route::group(['middleware' => 'auth'], function () {
 Route::get('/dashboard', [
      'uses' => 'PostController@getDashboard',
