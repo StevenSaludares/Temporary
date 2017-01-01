@@ -34,6 +34,14 @@ Route::post('/edit', [
     'uses' => 'PostController@postEditPost',
     'as' => 'edit'
 ]);
+Route::get('/account', [
+    'uses' => 'UserController@getAccount',
+    'as' => 'account'
+]);
+Route::post('/upateaccount', [
+    'uses' => 'UserController@postSaveAccount',
+    'as' => 'account.save'
+]);
 Route::group(['middleware' => 'auth'], function () {
 Route::get('/dashboard', [
      'uses' => 'PostController@getDashboard',
